@@ -7,4 +7,5 @@ Gem::Specification.new do |card|
 	card.add_development_dependency "rspec", '>= 0.0.0'
 	card.license = "MIT"
 	card.extra_rdoc_files = ['README.md', 'LICENSE']
+	card.files = ['lib/card.rb']
 end
