@@ -1,5 +1,5 @@
 # The gem
-	module Card
+	module Cards
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
 		class Card
