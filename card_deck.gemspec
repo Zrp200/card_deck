@@ -1,4 +1,5 @@
 Gem::Specification.new do |card_deck|
+	card_deck.homepage = 'https://github.com/zrp200/card_deck'
 	card_deck.name = "card_deck"
 	card_deck.author = "Zachary Perlmutter"
 	card_deck.summary = "The central part of a card game"
