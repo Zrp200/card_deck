@@ -22,6 +22,7 @@
 					attr_accessor :cards
 				# Creates a new Deck. Includes Jokers when jokers = true
 					def initialize(jokers=false)
+						@cards = Array.new
 						4.times do
 							stock 'Ace'
 							stock 'King'
