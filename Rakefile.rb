@@ -9,5 +9,5 @@ namespace 'build' do
 	end
 	task '000'.to_sym {build "0.0.0"}
 	task '010'.to_sym {build "0.1.0"}
-	task '011'.to_sym {build "0.1.1"}
+	task '011'.to_sym do; build "0.1.1"; end
 end
