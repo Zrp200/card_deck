@@ -13,7 +13,7 @@
 				attr_accessor :suit
 			# Creates a new card. Parameter num is the card's number. Parameter suit is the card's suit
 				def initialize(num, suit=nil)
-					unless NUM.include? num || SUIT.include? suit || suit.nil?
+					unless NUM.include?(num) || SUIT.include?(suit) || suit.nil?
 					raise CardError, 'Illegal argument'
 					else
 						@num, @suit = num, suit
