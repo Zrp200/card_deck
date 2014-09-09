@@ -29,12 +29,10 @@
 						@cards = Array.new
 						for suit in Card::SUIT
 							stock 'Ace', suit
-							stock 'King', suit
-							stock 'Queen', suit
+							for num in (2..10).to_a;  stock num, suit; end
 							stock 'Jack', suit
-							for num in (2..10).to_a
-								stock num, suit
-							end
+							stock 'Queen', suit
+							stock 'King', suit
 						end
 						2.times {stock 'Joker'} if jokers
 					end
