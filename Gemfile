@@ -1,1 +1,1 @@
-gemspec
+source "rubygems.org"
