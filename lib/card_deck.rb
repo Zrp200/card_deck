@@ -1,8 +1,8 @@
 # The gem
+	VERSION = "0.1.0"
 	module CardDeck
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
-				
 		class Card # The central part of any card game. It is what makes card games 'Card' games.
 			# Legal arguments for parameter num in Card#new.
 				NUM = %w(Ace King Queen Jack Joker) + (2..10).to_a
@@ -25,7 +25,7 @@
 			class Deck
 				# The cards in the deck
 					attr_accessor :cards
-				# Creates a new Deck. Includes Jokers when jokers = true
+				# Creates a new Deck. Includes Jokers when parameter jokers = true
 					def initialize(jokers=false)
 						@cards = Array.new
 						for suit in Card::SUIT
