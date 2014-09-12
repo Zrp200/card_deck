@@ -12,5 +12,7 @@ namespace 'build' do
 	task '011'.to_sym do; build "0.1.1"; end
 end
 namespace 'CardDeck::Deck' do
-	
+	task :view_cards do
+		`ruby -e "require card_deck" -e "CardDeck::Deck.new.cards.each {|card| p card}"`
+	end
 end
