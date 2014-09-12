@@ -1,5 +1,6 @@
 # The gem
-	VERSION = "0.1.0"
+	# Gem Version
+		VERSION = "0.1.2"
 	module CardDeck
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
