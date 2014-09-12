@@ -7,7 +7,9 @@ namespace 'build' do
 		`git add card_deck-#{version}.gem && git commit card_deck-#{version}.gem -m "rake build"`
 		`git push`
 	end
-	task '000'.to_sym {build "0.0.0"}
-	task '010'.to_sym {build "0.1.0"}
+	task '000'.to_sym do; build "0.0.0"; end
+	task '010'.to_sym do; build "0.1.0"
 	task '011'.to_sym do; build "0.1.1"; end
 end
+namespace 'CardDeck::Deck' do
+	
