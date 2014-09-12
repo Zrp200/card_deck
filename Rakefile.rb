@@ -8,11 +8,11 @@ namespace 'build' do
 		`git push`
 	end
 	task '000'.to_sym do; build "0.0.0"; end
-	task '010'.to_sym do; build "0.1.0"
+	task '010'.to_sym do; build "0.1.0"; end
 	task '011'.to_sym do; build "0.1.1"; end
 end
 namespace 'CardDeck::Deck' do
 	task :view_cards do
-		`ruby -e "require card_deck" -e "CardDeck::Deck.new.cards.each {|card| p card}"`
+		`ruby -e "require card_deck; CardDeck::Deck.new.cards.each {|card| p card}"`
 	end
 end
