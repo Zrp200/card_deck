@@ -2,7 +2,8 @@
 	module CardDeck
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
-		class Card
+				
+		class Card # The central part of any card game. It is what makes card games 'Card' games.
 			# Legal arguments for parameter num in Card#new.
 				NUM = %w(Ace King Queen Jack Joker) + (2..10).to_a
 			# Legal arguments for parameter suit in Card#new
