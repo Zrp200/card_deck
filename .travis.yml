@@ -9,4 +9,3 @@ rvm:
 - 1.9.2
 script: 
 - bundle exec rspec spec
-- rake CardDeck::Deck:view_cards
