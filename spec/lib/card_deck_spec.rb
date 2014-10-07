@@ -20,6 +20,12 @@ describe Card do
 				expect(subject.abbr).to eq "#{Card::SPADES}3"
 			end
 		end
+		context "@suit, @num = DIAMONDS, \"Jack\"" do
+			subject {Card.new "Jack", Card::DIAMONDS}
+			it "should return \u2666J" do
+				expect(subject.abbr).to eq "\u2666J"
+			end
+		end
     end
 end
     
