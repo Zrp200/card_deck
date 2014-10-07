@@ -1,7 +1,7 @@
 # The gem
 	module CardDeck
 		# Gem Version
-			VERSION = "0.2.1"
+			VERSION = "0.2.2"
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
 		class Card # The central part of any card game. It is what makes card games 'Card' games.
@@ -25,7 +25,10 @@
 				end
 			def abbreviation # The short version of the card
 				unless @num == "Joker"
-					"#{@suit}#{(@num.to_s)[0]}"
+					if @num == 10 then "#{@suit}#{@num}"
+					else
+						"#{@suit}#{(@num.to_s)[0]}"
+					end
 				else
 					@num
 				end
