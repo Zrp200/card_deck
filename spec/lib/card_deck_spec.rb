@@ -1,4 +1,4 @@
-require 'card_deck'
+require 'spec_helper'
 include CardDeck
 describe Card do
 	describe "::SPADES" do
@@ -13,19 +13,34 @@ describe Card do
 			expect(subject).to eq "\u2663"
 		end
 	end
-    describe "#abbr" do
-		context "@suit, @num = SPADES, 3" do
-			subject {Card.new 3, Card::SPADES}
-			it "should return #{Card::SPADES}3" do
-				expect(subject.abbr).to eq "#{Card::SPADES}3"
+	describe "#abbr" do
+		for suit in Card::SUIT
+			for num in (Card::NUM - "Joker")
+				subject = Card.new num, suit
+				context "@num, @suit = #{num}, #{suit}" do
+					case num.to_s.length
+						when 1
+							it "should return #{suit}#{num}" do
+								expect(subject.abbr).to eq "#{suit}#{num}"
+							end
+						when 2
+							it "should return #{suit}#{num}" do
+								expect(subject.abbr).to eq "#{suit}#{num}"
+							end
+					else
+						it "should return #{suit}#{num[0]}" do
+							expect(subject.abbr).to eq "#{suit}#{num[0]}"
+						end
+					end
+				end
 			end
 		end
-		context "@suit, @num = DIAMONDS, \"Jack\"" do
-			subject {Card.new "Jack", Card::DIAMONDS}
-			it "should return \u2666J" do
-				expect(subject.abbr).to eq "\u2666J"
+		context "@num = \"Joker\"" do
+			subject {Card.new "Joker"}
+			it "should return \"Joker\"" do
+				expect(subject.abbr).to eq "Joker"
 			end
 		end
-    end
+	end
 end
     
