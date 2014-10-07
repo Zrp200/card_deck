@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'CardDeck'
 include CardDeck
 describe Card do
 	describe "::SPADES" do
@@ -15,7 +15,7 @@ describe Card do
 	end
 	describe "#abbr" do
 		for suit in Card::SUIT
-			for num in (Card::NUM - "Joker")
+			for num in (Card::NUM - ["Joker"])
 				subject = Card.new num, suit
 				context "@num, @suit = #{num}, #{suit}" do
 					case num.to_s.length
