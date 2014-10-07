@@ -1,6 +1,6 @@
 # The gem
 	# Gem Version
-		VERSION = "0.1.2"
+		VERSION = "0.2.0"
 	module CardDeck
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
@@ -10,7 +10,7 @@
 			# Legal arguments for parameter num in Card#new.
 				NUM = %w(Ace King Queen Jack Joker) + (2..10).to_a
 			# Legal arguments for parameter suit in Card#new
-				SUIT = %w(\u2665 \u2666 \u2660 Clubs)
+				SUIT = [HEARTS, SPADES, DIAMONDS, "Clubs", nil]
 			# The card's number. Must be Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, or Joker
 				attr_accessor :num
 			# The card's suit. Must be Spades, Diamonds, Clubs, Hearts, or nil.
