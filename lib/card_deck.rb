@@ -1,16 +1,16 @@
 # The gem
-	# Gem Version
-		VERSION = "0.2.0"
 	module CardDeck
+		# Gem Version
+			VERSION = "0.2.0"
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
 		class Card # The central part of any card game. It is what makes card games 'Card' games.
 			# Suits
-				HEARTS, SPADES, DIAMONDS = "\u2665", "\u2660", "\u2666"
+				HEARTS, SPADES, DIAMONDS, CLUBS = "\u2665", "\u2660", "\u2666", "\u2663"
 			# Legal arguments for parameter num in Card#new.
 				NUM = %w(Ace King Queen Jack Joker) + (2..10).to_a
 			# Legal arguments for parameter suit in Card#new
-				SUIT = [HEARTS, SPADES, DIAMONDS, "Clubs", nil]
+				SUIT = [HEARTS, SPADES, DIAMONDS, CLUBS, nil]
 			# The card's number. Must be Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, or Joker
 				attr_accessor :num
 			# The card's suit. Must be Spades, Diamonds, Clubs, Hearts, or nil.
@@ -23,6 +23,14 @@
 						@num, @suit = num, suit
 					end
 				end
+			def abbreviation # The short version of the card
+				unless @num == "Joker"
+					"#{@suit}#{(@num.to_s)[0]}"
+				else
+					@num
+				end
+			end
+			alias abbr abbreviation # A shorter method name
 		end
 		# Card decks
 			class Deck
