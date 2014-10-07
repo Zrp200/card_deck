@@ -3,7 +3,9 @@ include CardDeck
 describe Card do
 	describe "::SPADES" do
 		subject {Card::SPADES}
-		it "should equal \u2660" {expect(subject).to eq "\u2660"}
+		it "should equal \u2660" do
+			expect(subject).to eq "\u2660"
+		end
 	end
     describe "#abbr" do
 	context "@suit = SPADES and 3" do
