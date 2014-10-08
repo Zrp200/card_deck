@@ -25,7 +25,7 @@ describe Card do
 							end
 						when 2
 							it "should return #{subject.suit}#{subject.num}" do
-								expect(subject.abbr).to eq "#{suit}#{num}"
+								expect(subject.abbr).to eq "#{subject.suit}#{subject.num}"
 							end
 					else
 						it "should return #{subject.suit}#{(subject.num)[0]}" do
