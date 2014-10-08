@@ -1,11 +1,15 @@
 language: ruby
 before_install:
 - gem update --system
-- gem install rspec
 rvm:
+- ruby-head
+- 2.1.2
 - 2.1.1
 - 2.0.0
 - 1.9.3
 - 1.9.2
 script: 
-- rspec -f doc
+- bundle exec rspec -f doc
+matrix:
+  allow_failures:
+  - rvm: ruby-head
