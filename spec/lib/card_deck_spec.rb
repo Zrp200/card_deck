@@ -16,9 +16,8 @@ describe Card do
 	describe "#abbr" do
 		for suit in Card::SUIT
 			for num in (Card::NUM - ["Joker"])
-				subject = Card.new num, suit
-				context "@num, @suit = #{num}, #{suit}" do
-					subject {Card.new num, suit}
+				subject {Card.new num, suit}
+				context "@num, @suit = #{subject.num}, #{subject.suit}" do
 					case String(subject.num).length
 						when 1
 							it "should return #{subject.suit}#{subject.num}" do
