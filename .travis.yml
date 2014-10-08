@@ -14,5 +14,5 @@ rvm:
 script: 
 - bundle exec rspec -f doc --require spec_helper
 matrix:
-  allow-failures:
+  allow-failure:
   - rvm: ruby-head
