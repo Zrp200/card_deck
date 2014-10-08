@@ -17,7 +17,7 @@ describe Card do
 		for suit in Card::SUIT
 			for num in (Card::NUM - ["Joker"])
 				context "@num, @suit = #{num}, #{suit}" do
-					subject {Card.new num, suit}
+					subject = Card.new num, suit
 					case String(subject.num).length
 						when 1
 							it "should return #{subject.suit}#{subject.num}" do
@@ -36,7 +36,7 @@ describe Card do
 			end
 		end
 		context "@num = \"Joker\"" do
-			subject {Card.new "Joker"}
+			subject = Card.new "Joker"
 			it "should return \"Joker\"" do
 				expect(subject.abbr).to eq "#{subject.num}"
 			end
