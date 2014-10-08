@@ -2,12 +2,13 @@ language: ruby
 before_install:
 - gem update --system
 rvm:
-- ruby-head
-- 2.1.2
-- 2.1.1
-- 2.0.0
-- 1.9.3
 - 1.9.2
+- 1.9.3
+- 2.0.0
+- 2.1.0
+- 2.1.1
+- 2.1.2
+- ruby-head
 script: 
 - bundle exec rspec -f doc
 matrix:
