@@ -1,4 +1,4 @@
-require 'CardDeck'
+require 'card_deck'
 include CardDeck
 describe Card do
 	describe "::SPADES" do
