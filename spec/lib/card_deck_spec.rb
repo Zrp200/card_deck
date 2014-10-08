@@ -21,16 +21,16 @@ describe Card do
 					subject {Card.new num, suit}
 					case String(subject.num).length
 						when 1
-							it "should return #{suit}#{num}" do
-								expect(subject.abbr).to eq "#{suit}#{num}"
+							it "should return #{subject.suit}#{subject.num}" do
+								expect(subject.abbr).to eq "#{subject.suit}#{subject.num}"
 							end
 						when 2
-							it "should return #{suit}#{num}" do
+							it "should return #{subject.suit}#{subject.num}" do
 								expect(subject.abbr).to eq "#{suit}#{num}"
 							end
 					else
-						it "should return #{suit}#{num[0]}" do
-							expect(subject.abbr).to eq "#{suit}#{num[0]}"
+						it "should return #{subject.suit}#{subject.num[0]}" do
+							expect(subject.abbr).to eq "#{subject.suit}#{subject.num[0]}"
 						end
 					end
 				end
