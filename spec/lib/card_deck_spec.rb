@@ -1,7 +1,7 @@
 require 'card_deck'
 include CardDeck
 RSpec.describe Card::SPADES do
-	it {is_expected.to eq("\2660")}
+	it {is_expected.to eq("\u2660")}
 end
 RSpec.describe Card do
 	it "is expected to respond to :num, :suit" do
