@@ -25,8 +25,3 @@ deploy:
     on:
       repo: Zrp200/card_deck
       rvm: ruby-head
-  - provider: releases
-    user: "zrp200@gmail.com"
-    password: "powerofdeath1"
-    on:
-      tags: true
