@@ -6,7 +6,9 @@ RSpec.describe Card do
 	end
 	describe "::SPADES" do
 		subject {Card::SPADES}
-		it "is expected to == \u2660" {expect(subject).to eq("\u2660")}
+		it "is expected to == \u2660" do 
+			expect(subject).to eq("\u2660")
+		end
 	end
 	describe "::CLUBS" do
 		subject {Card::CLUBS}
