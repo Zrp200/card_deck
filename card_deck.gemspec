@@ -6,7 +6,7 @@ Gem::Specification.new do |card_deck|
 	unless ENV['TRAVIS']
 		card_deck.version = "0.2.2"
 	else
-		card_deck.version = "0.2.2-alpha#{ENV['TRAVIS_BUILD_NUMBER]}"
+		card_deck.version = "0.2.2-alpha-#{ENV['TRAVIS_BUILD_NUMBER]}"
 	end
 	card_deck.add_development_dependency "rspec", '~> 3.0'
 	card_deck.license = "MIT"
