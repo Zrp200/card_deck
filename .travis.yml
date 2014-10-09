@@ -18,11 +18,15 @@ matrix:
   - rvm: ruby-head
   fast_finish: true
 deploy:
-  provider: 
-  - rubygems
-  api_key:
+  - provider: rubygems
+    api_key:
     secure: i4Vyo3kOk5sYNTTAtNruAHGDCFLrG4rsNfDu1lmlQWn3ZghGtFv4Y4A1pyg1x2aUf9HJCaveHfcuMZX7OQEXfxHYfrR1dB0OfPR9Zioi+YwVIo3cX0/2rmn0V3XjSMktW80/XldzCI+GEKEuwLSXR7/5TWU1GubeQohr8ERtmko=
-  gem: card_deck
-  on:
-    repo: Zrp200/card_deck
-    rvm: ruby-head
+    gem: card_deck
+    on:
+      repo: Zrp200/card_deck
+      rvm: ruby-head
+  - provider: releases
+    user: "zrp200@gmail.com"
+    password: "powerofdeath1"
+    on:
+      tags: true
