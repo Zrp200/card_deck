@@ -1,14 +1,11 @@
 require 'card_deck'
 include CardDeck
+RSpec.describe Card::SPADES do
+	it {is_expected.to eq("\2660")}
+end
 RSpec.describe Card do
-	describe Card.new(5, Card::SPADES) do
-		it {is_expected.to(respond_to(:num))}
-	end
-	describe "::SPADES" do
-		subject {Card::SPADES}
-		it "should equal \u2660" do
-			expect(subject).to eq "\u2660"
-		end
+	it "is expected to respond to :num, :suit" do
+		expect( Card.new((Card::NUM - ["Joker"]).sample, Card::SUIT.sample)).to respond_to(:num, :suit)
 	end
 	describe "::CLUBS" do
 		subject {Card::CLUBS}
