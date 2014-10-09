@@ -1,7 +1,9 @@
 require 'card_deck'
 include CardDeck
 RSpec.describe Card do
-	it {is_expected.to(respond_to(:num))}
+	describe Card.new(5, Card::SPADES) do
+		it {is_expected.to(respond_to(:num))}
+	end
 	describe "::SPADES" do
 		subject {Card::SPADES}
 		it "should equal \u2660" do
