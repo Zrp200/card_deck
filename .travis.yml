@@ -24,4 +24,4 @@ deploy:
   gem: card_deck
   on:
     repo: Zrp200/card_deck
-    rvm: 2.0.0
+    rvm: ruby-head
