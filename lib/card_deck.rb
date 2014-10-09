@@ -34,6 +34,7 @@
 				end
 			end
 			alias abbr abbreviation # A shorter method name
+			alias to_s abbr
 		end
 		# Card decks
 			class Deck
