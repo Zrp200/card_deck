@@ -3,11 +3,7 @@ Gem::Specification.new do |card_deck|
 	card_deck.name = "card_deck"
 	card_deck.author = "Zachary Perlmutter"
 	card_deck.summary = "The central part of a card game"
-	if ENV['TRAVIS']
-		card_deck.version = "0.2.2--alpha-#{ENV['TRAVIS_BUILD_NUMBER']}"
-	else
-		card_deck.version - "0.2.2"
-	end
+	card_deck.version = "0.2.2"
 	card_deck.add_development_dependency "rspec", '~> 3.0'
 	card_deck.license = "MIT"
 	card_deck.extra_rdoc_files = %w(README.md LICENSE)
