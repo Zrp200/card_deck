@@ -1,6 +1,7 @@
 require 'card_deck'
 include CardDeck
 RSpec.describe Card do
+	it {is_expected.to respond_to(:num)}
 	describe "::SPADES" do
 		subject {Card::SPADES}
 		it "should equal \u2660" do
@@ -13,7 +14,6 @@ RSpec.describe Card do
 			expect(subject).to eq "\u2663"
 		end
 	end
-	it {is_expected.to respond_to :num}
 	describe "#abbr" do
 		for suit in Card::SUIT
 			for num in (Card::NUM - ["Joker"])
