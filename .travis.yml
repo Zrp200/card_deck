@@ -19,6 +19,7 @@ matrix:
   fast_finish: true
 deploy:
   - provider: rubygems
+    api:
     secure: i4Vyo3kOk5sYNTTAtNruAHGDCFLrG4rsNfDu1lmlQWn3ZghGtFv4Y4A1pyg1x2aUf9HJCaveHfcuMZX7OQEXfxHYfrR1dB0OfPR9Zioi+YwVIo3cX0/2rmn0V3XjSMktW80/XldzCI+GEKEuwLSXR7/5TWU1GubeQohr8ERtmko=
     gem: card_deck
     on:
