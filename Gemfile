@@ -1,2 +1,5 @@
 source "http://rubygems.org"
-gem 'rspec', group: :test
+group :rspec do
+  gem 'rspec'
+  gem 'rspec-its'
+end
