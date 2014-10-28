@@ -13,6 +13,7 @@ rvm:
 - ruby-2.2.0-preview1
 - ruby-head
 script:
+- gem build card_deck.gemspec
 - bundle exec rspec -f doc --require spec_helper
 matrix:
   allow_failures:
