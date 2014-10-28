@@ -23,6 +23,9 @@
 						@num, @suit = num, suit
 					end
 				end
+			def self.gen # Creates a random new card.
+				self.new NUM.sample, SUIT.sample
+			end
 			def abbreviation # The short version of the card
 				unless @num == "Joker"
 					if @num == 10 then "#{@suit}#{@num}"
