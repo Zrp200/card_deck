@@ -5,7 +5,7 @@ RSpec.describe Card do
 		expect( Card.new((Card::NUM - ["Joker"]).sample, Card::SUIT.sample)).to respond_to(:num, :suit)
 	end
 	describe Card.gen do
-		it {is_expected.to respond_to(:num, :suit)
+		it {is_expected.to respond_to(:num, :suit)}
 	end
 		
 	describe "#inspect" do
