@@ -35,11 +35,13 @@
 			end
 			alias abbr abbreviation # A shorter method name
 			alias to_s abbr
+			alias inspect abbr
 		end
 		# Card decks
 			class Deck
 				# The cards in the deck
 					attr_accessor :cards
+					alias inspect cards
 				# Creates a new Deck. Includes Jokers when parameter jokers = true
 					def initialize(jokers=false)
 						@cards = Array.new
