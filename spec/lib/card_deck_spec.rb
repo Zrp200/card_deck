@@ -6,6 +6,7 @@ RSpec.describe Card do
 	end
 	describe "#inspect" do
 		it "is expected to equal #abbr"
+	end
 	describe "::SPADES" do
 		subject {Card::SPADES}
 		it "is expected to == \u2660" do 
