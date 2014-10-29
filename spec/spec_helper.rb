@@ -13,6 +13,7 @@
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 require "card_deck"
+require "rspec/its"
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
