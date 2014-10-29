@@ -1,7 +1,7 @@
 # The gem
 	module CardDeck
 		# Gem Version
-			VERSION = "0.2.2"
+			VERSION = "1.0.0"
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
 		class Card # The central part of any card game. It is what makes card games 'Card' games.
@@ -58,9 +58,8 @@
 						2.times {stock 'Joker'} if jokers
 					end
 				private
-					# Creates a Card to add to Deck#cards
-						def stock(num, suit=nil)
-							@cards.push Card.new(num, suit)
-						end
+					def stock(num, suit=nil) # Creates a Card to add to Deck#cards
+						@cards.push Card.new(num, suit)
+					end
 			end
 	end
