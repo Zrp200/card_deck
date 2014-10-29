@@ -6,10 +6,7 @@ RSpec.describe Card do
 	describe "#gen" do
 		subject {Card.gen}
 		it {is_expected.to respond_to(:num, :suit)}
-	end
-	
-	describe "#inspect" do
-		it "is expected to equal #abbr"
+		its(:abbr) {is_expected.to eq(subject.inspect)
 	end
 	describe "::SPADES" do
 		subject {Card::SPADES}
