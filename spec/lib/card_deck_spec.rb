@@ -16,7 +16,7 @@ RSpec.describe Card do
 	end
 	describe "::HEARTS" do
 		subject {Card::HEARTS}
-		it {is_expected.to eq("\u2665")
+		it {is_expected.to eq("\u2665")}
 	end
 	describe "::DIAMONDS" do
 		subject {Card::DIAMONDS}
