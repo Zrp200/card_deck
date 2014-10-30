@@ -1,12 +1,10 @@
 include CardDeck
 RSpec.describe Card do
-	it "is expected to respond to :num, :suit" do
-		expect( Card.new((Card::NUM - ["Joker"]).sample, Card::SUIT.sample)).to respond_to(:num, :suit)
-	end
-	describe "#gen" do
+	it {is_expected.to respond_to(:gen)}
+	describe "#new" do
 		subject {Card.gen}
+		its(:inspect) {is_expected.to eq(subject.abbr)}
 		it {is_expected.to respond_to(:num, :suit)}
-		its(:abbr) {is_expected.to eq(subject.inspect)}
 	end
 	describe "::SPADES" do
 		subject {Card::SPADES}
