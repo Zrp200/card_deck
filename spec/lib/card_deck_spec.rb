@@ -3,6 +3,8 @@ RSpec.describe Card do
 	describe "#new" do
 		subject {Card.gen}
 		its(:inspect) {is_expected.to eq(subject.abbr)}
+		its(:abbr) {is_expected.to eq(subject.inspect)}
+		its(:to_s) {is_expected.to eq(subject.inspect)}
 		it {is_expected.to respond_to(:num, :suit)}
 	end
 	describe "::SPADES" do
