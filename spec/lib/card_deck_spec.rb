@@ -32,6 +32,8 @@ RSpec.describe Deck do
 		subject {Deck.new}
 		it {is_expected.to respond_to(:cards, :inspect)}
 		its(:cards) {is_expected.to eq(subject.inspect)}
+		when ":jokers == true" do
+			subject {Deck.new jokers: true}
 	end
 end
     
