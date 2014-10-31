@@ -46,7 +46,7 @@
 					attr_accessor :cards
 					alias inspect cards
 				# Creates a new Deck. Includes Jokers when parameter jokers = true
-					def initialize(jokers=false)
+					def initialize(info=Hash.new(false))
 						@cards = Array.new
 						for suit in Card::SUIT
 							stock 'Ace', suit
