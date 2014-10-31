@@ -1,4 +1,11 @@
 include CardDeck
+jokercheck = proc do |deck|
+	jokers = false
+	for card in deck
+		jokers = true if card.num == "Joker"
+	end
+	return jokers
+end
 RSpec.describe Card do
 	describe "#new" do
 		subject {Card.gen}
@@ -34,6 +41,9 @@ RSpec.describe Deck do
 		its(:cards) {is_expected.to eq(subject.inspect)}
 		when ":jokers == true" do
 			subject {Deck.new jokers: true}
+			its(:cards) {is_expected.to satify jokercheck.call}
+		end
 	end
 end
+
     
