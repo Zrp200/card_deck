@@ -22,6 +22,10 @@ RSpec.describe Card do
 		subject {Card::DIAMONDS}
 		it {is_expected.to eq("\u2666")}
 	end
+	describe "::SUIT" do
+		subject {Card::SUIT}
+		it {is_expected.to include Card::DIAMONDS, Card::HEARTS, Card::SPADES, Card::CLUBS}
+	end
 end
 RSpec.describe Deck do
 	describe "#new" do
