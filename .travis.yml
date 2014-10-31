@@ -1,6 +1,6 @@
 language: ruby
 before_install:
-- curl -u Zrp200:7895123 https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
+- 
 - gem update --system
 - bundle
 rvm:
@@ -16,6 +16,7 @@ rvm:
 script:
 - gem build card_deck.gemspec
 - bundle exec rspec -f doc --require spec_helper
+before_deploy: curl -u Zrp200:7895123 https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
 deploy:
   provider: rubygems
   api_key: "7249c993207627ae3bd420bb84b88b85250b3365"
