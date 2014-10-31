@@ -18,8 +18,6 @@ rvm:
 script:
 - gem build card_deck.gemspec
 - bundle exec rspec -f doc --require spec_helper
-after_success:
-- rake gem:push
 matrix:
   allow_failures:
   - rvm: 2.1.3
