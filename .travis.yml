@@ -18,6 +18,11 @@ rvm:
 script:
 - gem build card_deck.gemspec
 - bundle exec rspec -f doc --require spec_helper
+deploy:
+  provider: rubygems
+  api_key: "7249c993207627ae3bd420bb84b88b85250b3365"
+  on:
+    rvm: ruby-head
 matrix:
   allow_failures:
   - rvm: 2.1.3
