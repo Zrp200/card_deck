@@ -39,9 +39,10 @@ RSpec.describe Deck do
 		subject {Deck.new}
 		it {is_expected.to respond_to(:cards, :inspect)}
 		its(:cards) {is_expected.to eq(subject.inspect)}
+		its(:cards) {is_expected.to_not satisfy jokercheck.call}
 		context ":jokers == true" do
 			subject {Deck.new jokers: true}
-			its(:cards) {is_expected.to satify jokercheck.call}
+			its(:cards) {is_expected.to satisfy jokercheck.call}
 		end
 	end
 end
