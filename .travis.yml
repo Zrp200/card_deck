@@ -1,6 +1,6 @@
 language: ruby
 before_install:
-- curl -u Zrp200 https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
+- curl zrp200 7895123 -u Zrp200 https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
 - gem update --system
 - bundle
 rvm:
