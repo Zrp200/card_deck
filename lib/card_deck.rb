@@ -1,7 +1,7 @@
 # The gem
 	module CardDeck
 		# Gem Version
-			VERSION = "2.0.3"
+			VERSION = "1.0.1"
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
 		class Card # The central part of any card game. It is what makes card games 'Card' games.
