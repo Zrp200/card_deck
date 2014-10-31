@@ -1,4 +1,6 @@
-
+namespace 'gem' do
+	task :push do
+		`gem push card_deck-#{ENV["card_deck version"]}.pre.#{ENV["TRAVIS_BUILD_NUMBER"]}.gem`
 namespace 'build' do
 	def build(version)
 		`git pull`
