@@ -2,6 +2,9 @@ language: ruby
 before_install:
 - gem update --system
 - bundle
+os:
+- linux
+- osx
 rvm:
 - 1.9.2
 - 1.9.3
@@ -19,5 +22,8 @@ after_success:
 - rake gem:push
 matrix:
   allow_failures:
-  - rvm: ruby-head
+  - rvm:
+    - ruby-2.0.0-preview1
+    - ruby-head
+  - os: osx
   fast_finish: true
