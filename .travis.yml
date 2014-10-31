@@ -1,5 +1,5 @@
 language: ruby
-before_install:
+install:
 - gem update --system
 - bundle
 rvm:
@@ -13,7 +13,6 @@ rvm:
 - ruby-2.2.0-preview1
 - ruby-head
 script:
-- gem build card_deck.gemspec
 - bundle exec rspec -f doc --require spec_helper
 deploy:
   provider: rubygems
