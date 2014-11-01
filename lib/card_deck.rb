@@ -49,6 +49,7 @@
 					def initialize(args=Hash.new(false))
 						@cards = Array.new
 						for suit in Card::SUIT
+							suit = nil if args[:no_suits]
 							stock 'Ace', suit
 							for num in (2..10).to_a;  stock num, suit; end
 							stock 'Jack', suit
