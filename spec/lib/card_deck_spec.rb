@@ -39,10 +39,11 @@ RSpec.describe Deck do
 		subject {Deck.new}
 		it {is_expected.to respond_to(:cards, :inspect)}
 		its(:cards) {is_expected.to eq(subject.inspect)}
-		its(:cards) {is_expected.to_not satisfy jokercheck.call(self)}
 		context ":jokers == true" do
 			subject {Deck.new jokers: true}
-			its(:cards) {is_expected.to satisfy jokercheck.call(self)}
+			describe subject.cards do
+				its(:length) {is_expected.to eq 54}
+			end
 		end
 	end
 end
