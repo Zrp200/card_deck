@@ -1,11 +1,4 @@
 include CardDeck
-jokercheck = proc do
-	jokers = false
-	for card in subject
-		jokers = true if card.num == "Joker"
-	end
-	return jokers
-end
 RSpec.describe Card do
 	describe "#new" do
 		subject {Card.gen}
