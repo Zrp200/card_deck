@@ -10,7 +10,7 @@ RSpec::Matchers.define :have_jokers do
 end
 RSpec.describe Deck do
 	describe "#new" do
-		let(:deck) {Deck.new}
+		deck = Deck.new
 		subject {deck}
 		it {is_expected.to respond_to(:cards, :inspect)}
 		describe deck.cards do
