@@ -14,7 +14,7 @@ RSpec.describe Deck do
 		subject {deck}
 		it {is_expected.to respond_to(:cards, :inspect)}
 		describe deck.cards do
-			it {is_expected.to eq(subject.inspect)}
+			it {is_expected.to eq(deck.inspect)}
 			it {is_expected.to_not have_jokers}
 		end
 		context ":jokers == true" do
