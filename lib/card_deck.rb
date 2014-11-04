@@ -1,8 +1,8 @@
 # The gem
 	module CardDeck
-		
 		def Card(num, suit=nil) # an easier way to generate a card
-			suit
+			Card.new num, suit
+		end
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
 		class Card # The central part of any card game. It is what makes card games 'Card' games.
