@@ -1,7 +1,8 @@
 # The gem
 	module CardDeck
-		# Gem Version
-			VERSION = "1.1.0"
+		
+		def Card(num, suit=nil) # an easier way to generate a card
+			suit
 		# Errors for when you incorrectly use a card.
 			class CardError < StandardError; end
 		class Card # The central part of any card game. It is what makes card games 'Card' games.
@@ -17,6 +18,14 @@
 				attr_accessor :suit
 			# Creates a new card. Parameter num is the card's number. Parameter suit is the card's suit
 				def initialize(num, suit=nil)
+					unless suit.nil?
+						suit = case suit.downcase
+							when "diamonds" then DIAMONDS
+							when "spades" then SPADES
+							when "hearts" then HEARTS
+							when "clubs" then CLUBS
+						end
+					end
 					unless NUM.include?(num) || SUIT.include?(suit) || suit.nil?
 					raise CardError, 'Illegal argument'
 					else
