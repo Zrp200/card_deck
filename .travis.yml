@@ -22,7 +22,7 @@ deploy:
   gem: card_deck
   on:
     repo: Zrp200/card_deck
-	tags: true
+    tags: true
 matrix:
   allow_failures:
   - rvm: ruby-head
