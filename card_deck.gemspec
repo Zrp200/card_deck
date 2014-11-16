@@ -6,10 +6,9 @@ Gem::Specification.new do |card_deck|
 	card_deck.author = "Zachary Perlmutter"
 	card_deck.summary = "The central part of a card game"
 	card_deck.version = ENV['TRAVIS_TAG']
-	# card_deck.version = "#{card_deck.version}-#{ENV['TRAVIS_BUILD_NUMBER']}" if ENV['TRAVIS']
 	card_deck.add_development_dependency "rspec", '~> 3.1'
 	card_deck.add_development_dependency "rspec-its"
 	card_deck.license = "MIT"
 	card_deck.extra_rdoc_files = %w(README.md LICENSE)
-	card_deck.files = ['lib/card_deck.rb']
+	card_deck.files = %w(lib/card.rb lib/deck.rb)
 end
