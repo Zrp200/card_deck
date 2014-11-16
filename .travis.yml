@@ -2,7 +2,7 @@ language: ruby
 install: bundle
 rvm: 2.0.0
 script:
-- rspec spec -f doc
+- bundle exec rspec spec -f doc
 deploy:
   provider: rubygems
   api_key:
