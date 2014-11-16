@@ -1,7 +1,5 @@
 language: ruby
-install:
-- gem build card_deck.gemspec
-- gem install card_deck-#{$TRAVIS_TAG}.gem --dev
+install: bundle
 rvm: 2.0.0
 script:
 - rspec spec -f doc
