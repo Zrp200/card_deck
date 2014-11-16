@@ -1,3 +1,4 @@
+require "spec_helper"
 include CardDeck
 RSpec.describe Card do
 	describe "#new" do
