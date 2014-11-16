@@ -1,5 +1,4 @@
 source "http://rubygems.org"
-gem "rspec"
-gem "rspec-its"
-gem 'rake', group: :development
+gemspec
+gem "rspec-its", group: :development
 gem "codeclimate-test-reporter", group: :test, require: nil
