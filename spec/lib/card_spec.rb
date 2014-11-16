@@ -1,3 +1,4 @@
+require "card_deck"
 include CardDeck
 RSpec.describe Card do
 	describe "#new" do
