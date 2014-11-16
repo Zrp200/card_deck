@@ -1,5 +1,4 @@
 require "rspec/expectations"
-require "deck"
 RSpec::Matchers.define :have_jokers do
 	match do |actual|
 		jokers = false
