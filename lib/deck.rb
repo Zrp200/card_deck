@@ -1,6 +1,6 @@
 require_relative "card.rb"
 include CardDeck
-class Deck # The deck
+class CardDeck::Deck # The deck
 	# The cards in the deck
 		attr_accessor :cards
 		alias inspect cards
