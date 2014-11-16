@@ -5,8 +5,7 @@ Gem::Specification.new do |card_deck|
 	card_deck.description = "Supplies the core parts of any card game. To use the deck, call shuffle on it."
 	card_deck.author = "Zachary Perlmutter"
 	card_deck.summary = "The central part of a card game"
-	card_deck.version = "0.build"
-	card_deck.version = ENV['TRAVIS_TAG'] if ENV['TRAVIS']
+	card_deck.version = "2.0.development"
 	card_deck.add_development_dependency "code-climate-test-reporter"
 	card_deck.add_development_dependency "rspec"
 	card_deck.add_development_dependency "rspec-its"
