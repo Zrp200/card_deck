@@ -11,6 +11,18 @@ RSpec.describe Card do
 			subject {suit_check.call("diamonds").suit}
 			it {is_expected.to eq Card::DIAMONDS}
 		end
+		context "when suit == spades" do
+			subject {suit_check.call("spades").suit}
+			it {is_expected.to eq Card::SPADES}
+		end
+		context "when suit == hearts" do
+			subject {suit_check.call("hearts").suit}
+			it {is_expected.to eq Card::HEARTS}
+		end
+		context "when suit == clubs" do
+			subject {suit_check.call("clubs").suit}
+			it {is_expected.to eq Card::CLUBS}
+		end
 	end
 	describe "::SPADES" do
 		subject {Card::SPADES}
