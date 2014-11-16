@@ -8,6 +8,8 @@ Gem::Specification.new do |card_deck|
 	card_deck.version = ENV['TRAVIS_TAG']
 	card_deck.version = ENV['TRAVIS_JOB_ID'] if ENV['TRAVIS_TAG'] == ""
 	card_deck.license = "MIT"
+	card_deck.add_development_dependency "rspec"
+  	card_deck.add_development_dependency "rspec-its"
 	card_deck.extra_rdoc_files = %w(README.md LICENSE)
 	card_deck.files = %w(lib/card.rb lib/deck.rb)
 end
