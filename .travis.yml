@@ -1,7 +1,7 @@
 language: ruby
 install:
 - gem build card_deck.gemspec
-- gem install card_deck-2.0.0.development --dev
+- gem install card_deck-.gem --dev
 rvm: 2.0.0
 script:
 - bundle exec rspec spec -f doc
