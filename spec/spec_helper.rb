@@ -13,8 +13,8 @@ require_relative "codeclimate.rb"
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
-require "lib/hand.rb" rescue require "card_deck"
-require "lib/card.rb" rescue require "card_deck"
+require "hand.rb" rescue require "card_deck"
+require "card.rb" rescue require "card_deck"
 require "rspec/its"
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
