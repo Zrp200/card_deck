@@ -45,6 +45,9 @@
 					@num
 				end
 			end
+			def black? # Tests if the suit color is black
+				suit == SPADES || suit == CLUBS
+			end
 			alias abbr abbreviation # A shorter method name
 			alias to_s abbr
 			alias inspect abbr
