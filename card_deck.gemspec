@@ -6,7 +6,7 @@ Gem::Specification.new do |card_deck|
 	card_deck.author = "Zachary Perlmutter"
 	card_deck.summary = "The central part of a card game"
 	card_deck.version = ENV['TRAVIS_TAG']
-	card_deck.add_development_dependency "code-climate-test-reporter"
+	card_deck.add_development_dependency "codeclimate-test-reporter"
 	card_deck.add_development_dependency "rspec"
 	card_deck.add_development_dependency "rspec-its"
 	card_deck.license = "MIT"
