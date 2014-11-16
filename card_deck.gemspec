@@ -11,4 +11,5 @@ Gem::Specification.new do |card_deck|
 	card_deck.license = "MIT"
 	card_deck.extra_rdoc_files = %w(README.md LICENSE)
 	card_deck.files = %w(lib/card.rb lib/deck.rb)
+	card_deck.test_files = %w(spec/lib/card_spec.rb spec/lib/deck_spec.rb)
 end
