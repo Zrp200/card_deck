@@ -8,3 +8,4 @@ Can include jokers
 [![Code Climate](https://codeclimate.com/github/Zrp200/card_deck/badges/gpa.svg)](https://codeclimate.com/github/Zrp200/card_deck)
 [![Build Status](https://travis-ci.org/Zrp200/card_deck.svg?branch=master)](https://travis-ci.org/Zrp200/card_deck)
 [![Test Coverage](https://codeclimate.com/github/Zrp200/card_deck/badges/coverage.svg)](https://codeclimate.com/github/Zrp200/card_deck)
+[![Dependency Status](https://gemnasium.com/Zrp200/card_deck.svg)](https://gemnasium.com/Zrp200/card_deck)
