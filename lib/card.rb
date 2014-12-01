@@ -1,6 +1,6 @@
 # The gem
 	module CardDeck
-		def Card(num, suit=nil) # an easier way to generate a card
+		def Card(num, suit) # an easier way to generate a card
 			Card.new num, suit
 		end
 		# Errors for when you incorrectly use a card.
@@ -17,8 +17,8 @@
 			# The card's suit. Must be Spades, Diamonds, Clubs, Hearts, or nil.
 				attr_accessor :suit
 			# Creates a new card. Parameter num is the card's number. Parameter suit is the card's suit
-				def initialize(num, suit=nil)
-					unless suit.nil?
+				def initialize(num, suit)
+					unless SUIT.include? suit
 						suit = case suit.downcase
 							when "diamonds" then DIAMONDS
 							when "spades" then SPADES
@@ -26,11 +26,7 @@
 							when "clubs" then CLUBS
 						end
 					end
-					unless NUM.include?(num) || SUIT.include?(suit) || suit.nil?
-					raise CardError, 'Illegal argument'
-					else
-						@num, @suit = num, suit
-					end
+					@num, @suit = num, suit
 				end
 			def self.gen # Creates a random new card.
 				self.new NUM.sample, SUIT.sample
