@@ -1,14 +1,12 @@
 require_relative "card.rb"
 module CardDeck
 	class Deck # The deck
-		# The cards in the deck
-			attr_accessor :cards
-			alias inspect cards
+		attr_accessor :cards # The cards in the deck
 		def initialize(args=Hash.new(false)) # Creates a new Deck. Includes Jokers when parmeter args == {jokers: true}
 			@cards = Array.new
 			for suit in Card::SUIT
 				stock 'Ace', suit
-				for num in (2..10).to_a;  stock num, suit; end
+				for num in (2..10).to_a; stock num, suit; end
 				stock 'Jack', suit
 				stock 'Queen', suit
 				stock 'King', suit
