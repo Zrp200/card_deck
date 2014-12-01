@@ -13,10 +13,18 @@ RSpec.describe Deck do
 	describe "#new" do
 		subject {Deck.new}
 		it {is_expected.to respond_to(:cards, :inspect)}
-		its(:cards) {is_expected.to_not have_jokers}
+		describe "cards" do
+			subject {Deck.new.cards}
+			it {is_expected.to_not have_jokers}
+			describe "sample" do
+				subject {Deck.new.cards.sample}
+				its(:suit) {is_expected.to_not be nil}
+			end
+		end
 		context ":jokers == true" do
 			subject {Deck.new jokers: true}
 			its(:cards) {is_expected.to have_jokers}
 		end
+		
 	end
 end
