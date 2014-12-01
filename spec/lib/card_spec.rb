@@ -3,10 +3,10 @@ include CardDeck
 RSpec.describe Card do
 	describe "#new" do
 		subject {Card.gen}
-		it {is_expected.to respond_to(:num, :suit, :to_s, :inspect, :abbr, :abbreviation)}
+		it {is_expected.to respond_to(:num, :suit, :to_s, :abbr, :abbreviation)}
 		its(:suit) {is_expected.to_not be nil}
 		its(:abbr) {is_expected.to eq(subject.abbreviation)}
-		its(:to_s) {is_expected.to eq(subject.inspect)}
+		its(:to_s) {is_expected.to eq(subject.abbr)}
 		suit_check = proc {|suit| Card.new Card::NUM.sample, suit}
 		context "when suit == diamonds" do
 			subject {suit_check.call("diamonds").suit}
