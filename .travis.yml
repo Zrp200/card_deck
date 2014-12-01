@@ -15,7 +15,7 @@ deploy:
 - provider: releases
   api_key:
    secure: FzoXqa9axvI5ZhE4l914n7p2t8P/yZ6H4eaWhbB9Jt6i9Y84DF+HiPRP8SPG/gozvxejN+Flp0V7xIRqajZSSFVI4EkrKdJc5yXAre2P0aJdInFL9c6WbdhDi7qUbd29KkqzXCDzv1LQ9R8iF+FilWnoPhb8gNntiVTFXRspTHY=
-  file: "card_deck-#{$TRAVIS_TAG}.gem"
+  file: ruby -e 'Dir.glob("card_deck-*.gem")'
   on:
    repo: Zrp200/card_deck
    all_branches: true
