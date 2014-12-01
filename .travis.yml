@@ -19,5 +19,6 @@ deploy:
   on:
    repo: Zrp200/card_deck
    all_branches: true
+   tags: true
 matrix:
   fast_finish: true
