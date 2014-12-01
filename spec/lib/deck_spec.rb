@@ -18,7 +18,7 @@ RSpec.describe Deck do
 			it {is_expected.to_not have_jokers}
 			describe "sample" do
 				subject {Deck.new.cards.sample}
-				its(:suit) {is_expected.to_not be nil}
+				it {is_expected.to respond_to(:num, :abbr, :suit)}
 			end
 		end
 		context ":jokers == true" do
