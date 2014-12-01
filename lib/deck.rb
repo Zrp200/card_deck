@@ -16,6 +16,6 @@ module CardDeck
 			2.times {stock 'Joker'} if args[:jokers]
 		end
 		private
-			def stock(num, suit=nil); @cards.push Card.new num, suit; end # Creates a Card to add to Deck#cards
+			def stock(num, suit=Card::SUIT.sample); @cards.push Card.new num, suit; end # Creates a Card to add to Deck#cards
 	end
 end
