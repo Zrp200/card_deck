@@ -4,7 +4,7 @@ module CardDeck
 		attr_accessor :cards # The cards in the deck
 		def initialize(args=Hash.new(false)) # Creates a new Deck. Includes Jokers when parmeter args == {jokers: true}
 			@cards = Array.new
-			for suit in Card::SUIT
+			for suit in Card::Suit
 				stock 'Ace', suit
 				for num in (2..10).to_a; stock num, suit; end
 				stock 'Jack', suit
@@ -14,6 +14,6 @@ module CardDeck
 			2.times {stock 'Joker'} if args[:jokers]
 		end
 		private
-			def stock(num, suit=Card::SUIT.sample); @cards.push Card.new num, suit; end # Creates a Card to add to Deck#cards
+			def stock(num, suit=Card::Suit.sample); @cards.push Card.new num, suit; end # Creates a Card to add to Deck#cards
 	end
 end

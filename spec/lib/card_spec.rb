@@ -2,48 +2,48 @@ require "spec_helper"
 include CardDeck
 RSpec.describe Card do
 	describe "#new" do
-		subject {Card.gen}
-		it {is_expected.to respond_to(:num, :suit, :to_s, :abbr, :abbreviation)}
+		subject {Card.new}
+		it {is_expected.to respond_to(:num, :suit, :to_s, :abbr, :abbreviation, :black?, :red?)}
 		its(:suit) {is_expected.to_not be nil}
 		its(:abbr) {is_expected.to eq(subject.abbreviation)}
 		its(:to_s) {is_expected.to eq(subject.abbr)}
-		suit_check = proc {|suit| Card.new Card::NUM.sample, suit}
+		suit_check = proc {|suit| Card.new Card::Num.sample, suit}
 		context "when suit == diamonds" do
 			subject {suit_check.call("diamonds").suit}
-			it {is_expected.to eq Card::DIAMONDS}
+			it {is_expected.to eq Card::Diamonds}
 		end
 		context "when suit == spades" do
 			subject {suit_check.call("spades").suit}
-			it {is_expected.to eq Card::SPADES}
+			it {is_expected.to eq Card::Spades}
 		end
 		context "when suit == hearts" do
 			subject {suit_check.call("hearts").suit}
-			it {is_expected.to eq Card::HEARTS}
+			it {is_expected.to eq Card::Hearts}
 		end
 		context "when suit == clubs" do
 			subject {suit_check.call("clubs").suit}
-			it {is_expected.to eq Card::CLUBS}
+			it {is_expected.to eq Card::Clubs}
 		end
 	end
-	describe "::SPADES" do
-		subject {Card::SPADES}
+	describe "::Spades" do
+		subject {Card::Spades}
 		it {is_expected.to eq("\u2660")}
 	end
-	describe "::CLUBS" do
-		subject {Card::CLUBS}
+	describe "::Clubs" do
+		subject {Card::Clubs}
 		it {is_expected.to eq("\u2663")}
 	end
-	describe "::HEARTS" do
-		subject {Card::HEARTS}
+	describe "::Hearts" do
+		subject {Card::Hearts}
 		it {is_expected.to eq("\u2665")}
 	end
-	describe "::DIAMONDS" do
-		subject {Card::DIAMONDS}
+	describe "::Diamonds" do
+		subject {Card::Diamonds}
 		it {is_expected.to eq("\u2666")}
 	end
 	describe "::SUIT" do
-		subject {Card::SUIT}
-		it {is_expected.to include Card::DIAMONDS, Card::HEARTS, Card::SPADES, Card::CLUBS}
+		subject {Card::Suit}
+		it {is_expected.to include Card::Diamonds, Card::Hearts, Card::Spades, Card::Clubs}
 	end
 end
 
