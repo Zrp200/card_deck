@@ -32,5 +32,6 @@ module CardDeck # The gem
 		def red?; suit == Hearts || suit == Diamonds; end # Tests if the suit color is red
 		alias abbr abbreviation # A shorter method name
 		alias to_s abbr
+		alias inspect abbreviation
 	end
 end
