@@ -2,7 +2,10 @@ module CardDeck # The gem
 
 =begin
 An easier way to generate a card
+@param num [String, Fixnum]
+@param suit [String]
 @see Card#initialize
+@return [Card]
 =end
 	def Card(num=Card::Num.sample, suit=Card::Suit.sample); Card.new num, suit; end
 	class CardError < StandardError; end # Errors for when you incorrectly use a card.
@@ -45,7 +48,7 @@ The shorter representation of the card
 		end
 		def black?; suit == Spades | Clubs; end # @return [Boolean]
 		def red?; suit == Hearts | Diamonds; end # @return [Boolean]
-		alias abbr abbreviation # A shorter method name
+		alias abbr abbreviation
 		alias to_s abbr
 		alias inspect abbreviation
 	end
