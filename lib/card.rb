@@ -2,7 +2,7 @@ module CardDeck # The gem
 
 =begin
 An easier way to generate a card
-@see Card new
+@see Card#initialize
 =end
 	def Card(num=Card::Num.sample, suit=Card::Suit.sample); Card.new num, suit; end
 	class CardError < StandardError; end # Errors for when you incorrectly use a card.
