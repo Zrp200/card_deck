@@ -1,7 +1,7 @@
 require_relative "card.rb"
 module CardDeck
 	class Deck # The deck
-		attr_accessor :cards # The cards in the deck
+		attr_accessor :cards # @return [Array<Card>]
 		def initialize(args=Hash.new(false)) # Creates a new Deck. Includes Jokers when parmeter args == {jokers: true}
 			@cards = Array.new
 			for suit in Card::Suit
