@@ -1,4 +1,4 @@
-require_relative "card.rb"
+require "card_deck/card"
 module CardDeck
 	class Deck # The deck
 		attr_accessor :cards # @return [Array<Card>]
