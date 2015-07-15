@@ -4,9 +4,9 @@ module CardDeck
 		attr_accessor :cards # @return [Array<Card>]
 		def initialize(args=Hash.new(false)) # Creates a new Deck. Includes Jokers when parmeter args == {jokers: true}
 			@cards = Array.new
-			for suit in Card::Suit
+			Card::Suit.each do |suit|
 				stock 'Ace', suit
-				for num in (2..10).to_a; stock num, suit; end
+				(2..10).each {|num| stock num, suit}
 				stock 'Jack', suit
 				stock 'Queen', suit
 				stock 'King', suit
