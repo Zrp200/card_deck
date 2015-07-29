@@ -1,5 +1,8 @@
 require "card_deck/card"
 module CardDeck
+	def Deck(args=Hash.new(false))
+		Deck.new args
+	end
 	class Deck # The deck
 		attr_accessor :cards # @return [Array<Card>]
 		def initialize(args=Hash.new(false)) # Creates a new Deck. Includes Jokers when parmeter args == {jokers: true}
