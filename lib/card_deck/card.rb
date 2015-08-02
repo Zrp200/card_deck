@@ -7,9 +7,7 @@ An easier way to generate a card
 @see Card#initialize
 @return [Card]
 =end
-	def Card(num=Card::Num.sample, suit=Card::Suit.sample)
-		Card.new num, suit
-	end
+	
 	class CardError < StandardError; end # Errors for when you incorrectly use a card.
 	class Card # The central part of any card game. It is what makes card games 'Card' games.
 		Hearts, Spades, Diamonds, Clubs = "\u2665", "\u2660", "\u2666", "\u2663" # Suits
@@ -46,5 +44,9 @@ The shorter representation of the card
 		alias abbr abbreviation
 		alias to_s abbr
 		alias inspect abbreviation
+	end
+	module_function
+	def Card(num=Card::Num.sample, suit=Card::Suit.sample) # @return [Card]
+		Card.new num, suit
 	end
 end
