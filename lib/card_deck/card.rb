@@ -39,11 +39,11 @@ The shorter representation of the card
 	end
 	module_function
 #@return [Card]
-#@param num [String, Fixnum]
+#@param [String, Fixnum] num
 #@param suit [String]
 #@see Card#initialize
 #An easier way to generate a card
-	def Card(num=Card::Num.sample, suit=Card::Suit.sample) # @return [Card]
+	def Card(num=Card::Num.sample, suit=Card::Suit.sample)
 		Card.new num, suit
 	end
 end
