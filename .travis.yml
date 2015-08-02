@@ -10,7 +10,6 @@ deploy:
   gem: card_deck
   on:
     repo: Zrp200/card_deck
-    tags: true
     all_branches: true
 - provider: releases
   api_key:
