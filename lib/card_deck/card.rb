@@ -23,7 +23,7 @@ An easier way to generate a card
 @param num [String, Fixnum]
 =end
 		def initialize(num=Num.sample, suit=Suit.sample)
-			suit = const_get suit.upcase unless Suit.include? suit
+			suit = Card.const_get suit.capitalize unless Suit.include? suit
 			@num, @suit = num, suit
 		end
 
@@ -33,14 +33,16 @@ The shorter representation of the card
 =end
 		def abbreviation
 			unless @num == "Joker"
-				if @num == 10 then @suit + @num
-				else @suit + @num.to_s.fetch(0) end
-			else @num end
+				if @num == 10 then @suit + @num.to_s
+				else @suit + Array(@num.to_s).fetch(0) end
+			else @num.to_s end
 		end
 		def black? # @return [Boolean]
-			suit == Spades | Clubs
+			suit == Spades || suit == Clubs
 		end
-		def red?; suit == Hearts | Diamonds; end # @return [Boolean]
+		def red? # @return [Boolean]
+			suit == Hearts || suit == Diamonds
+		end
 		alias abbr abbreviation
 		alias to_s abbr
 		alias inspect abbreviation

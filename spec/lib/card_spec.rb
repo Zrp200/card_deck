@@ -1,28 +1,29 @@
 require "spec_helper"
+require "card_deck/card"
 include CardDeck
 RSpec.describe Card do
 	describe "#new" do
 		subject {Card.new}
-		it {is_expected.to respond_to(:num, :suit, :to_s, :abbr, :abbreviation, :black?, :red?)}
+		it {is_expected.to respond_to(:num, :suit, :to_s, :abbr, :abbreviation, :black? , :red? )}
 		its(:suit) {is_expected.to_not be nil}
 		its(:abbr) {is_expected.to eq(subject.abbreviation)}
 		its(:to_s) {is_expected.to eq(subject.abbr)}
-		suit_check = proc {|suit| Card.new Card::Num.sample, suit}
-		context "when suit == diamonds" do
-			subject {suit_check.call("diamonds").suit}
-			it {is_expected.to eq Card::Diamonds}
-		end
-		context "when suit == spades" do
-			subject {suit_check.call("spades").suit}
-			it {is_expected.to eq Card::Spades}
-		end
-		context "when suit == hearts" do
-			subject {suit_check.call("hearts").suit}
-			it {is_expected.to eq Card::Hearts}
-		end
-		context "when suit == clubs" do
-			subject {suit_check.call("clubs").suit}
-			it {is_expected.to eq Card::Clubs}
+		describe "parameter suit" do
+			suit_check = proc {|suit| Card.new Card::Num.sample, suit}
+			subject {Card.new.suit}
+			it {is_expected.to_not be nil}
+			%w(diamonds hearts).each do |suit|
+				context "when #{suit}" do
+					subject {suit_check.call(suit)}
+					it {is_expected.to be_red}
+				end
+			end
+			%w(spades clubs).each do |suit|
+				context "when #{suit}" do
+					subject {suit_check.call(suit)}
+					it {is_expected.to be_black}
+				end
+			end
 		end
 	end
 	describe "::Spades" do

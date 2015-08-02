@@ -1,4 +1,5 @@
 require "rspec/expectations"
+require "card_deck/deck"
 require "spec_helper"
 RSpec::Matchers.define :have_jokers do
 	match do |actual|
@@ -9,6 +10,7 @@ RSpec::Matchers.define :have_jokers do
 		return jokers
 	end
 end
+include CardDeck
 RSpec.describe Deck do
 	describe "#new" do
 		subject {Deck.new}

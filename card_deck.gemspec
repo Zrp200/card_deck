@@ -5,11 +5,12 @@ Gem::Specification.new do |card_deck|
 	card_deck.description = "Supplies the core parts of any card game. To use the deck, call shuffle on it."
 	card_deck.author = "Zachary Perlmutter"
 	card_deck.summary = "The central part of a card game"
-	card_deck.version = ENV['TRAVIS_TAG']
-	card_deck.version = ENV['TRAVIS_JOB_ID'] if ENV['TRAVIS_TAG'] == ""
+	if !ENV['TRAVIS'] then card_deck.version = "4.0.0.pre"
+	elsif ENV['TRAVIS_TAG'] == "" then card_deck.version = ENV['TRAVIS_JOB_ID']
+	else card_deck.version = ENV['TRAVIS_TAG'] end
 	card_deck.license = "MIT"
 	card_deck.add_development_dependency "rspec"
   	card_deck.add_development_dependency "rspec-its"
-	card_deck.extra_rdoc_files = %w(README.md LICENSE)
+	card_deck.extra_rdoc_files = %w(README.md LICENSE.md)
 	card_deck.files = Dir.glob "lib/*"
 end
