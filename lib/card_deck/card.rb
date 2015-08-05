@@ -38,11 +38,13 @@ The shorter representation of the card
 		alias inspect abbreviation
 	end
 	module_function
-#@return [Card]
-#@param [String, Fixnum] num
-#@param suit [String]
-#@see Card#initialize
-#An easier way to generate a card
+=begin
+ @return [Card]
+ @param [String, Fixnum] num
+ @param [String] suit
+ @see Card#initialize
+ An easier way to generate a card
+=end
 	def Card(num=Card::Num.sample, suit=Card::Suit.sample)
 		Card.new num, suit
 	end
