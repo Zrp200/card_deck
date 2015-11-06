@@ -4,7 +4,7 @@ include CardDeck
 RSpec.describe Card do
 	describe "#new" do
 		subject {Card.new}
-		it {is_expected.to respond_to(:num, :suit, :to_s, :abbr, :abbreviation, :black? , :red? )}
+		it {is_expected.to respond_to(:num, :suit, :abbr, :abbreviation, :black? , :red? )}
 		its(:suit) {is_expected.to_not be nil}
 		its(:abbr) {is_expected.to eq(subject.abbreviation)}
 		its(:to_s) {is_expected.to eq(subject.abbr)}
