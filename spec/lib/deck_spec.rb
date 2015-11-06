@@ -12,8 +12,9 @@ RSpec::Matchers.define :have_jokers do
 end
 include CardDeck
 RSpec.describe Deck do
-	it "should have a working constructor" do
-		expect{Deck()}.to_not raise_error
+	describe 'constructor' do
+		subject {Deck()}
+		it {is_expected.to be_instance_of Deck}
 	end
 	describe "#new" do
 		subject {Deck.new}
