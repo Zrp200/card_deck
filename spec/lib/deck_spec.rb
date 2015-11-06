@@ -13,7 +13,7 @@ end
 include CardDeck
 RSpec.describe Deck do
 	it "should have a working constructor" do
-		expect{Deck()}.to_not raise_error}
+		expect{Deck()}.to_not raise_error
 	end
 	describe "#new" do
 		subject {Deck.new}
