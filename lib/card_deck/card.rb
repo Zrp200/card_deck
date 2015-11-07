@@ -3,7 +3,7 @@ module CardDeck # The gem
 	class CardError < StandardError; end # Errors for when you incorrectly use a card.
 	class Card # The central part of any card game. It is what makes card games 'Card' games.
 		Hearts, Spades, Diamonds, Clubs = "\u2665", "\u2660", "\u2666", "\u2663" # Suits
-		Num = %w(Ace King Queen Jack Joker) + (2..10).to_a # Legal arguments for parameter num in Card#new.
+		Num = %w(Ace King Queen Jack Joker) + Array(2..10) # Legal arguments for parameter num in Card#new.
 		Suit = [Hearts, Spades, Diamonds, Clubs] # Legal arguments for parameter suit in Card#new
 		attr_accessor :num # @return [String, Fixnum] must be Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, or Joker
 		attr_accessor :suit # @return [String] must be spades, diamonds, clubs, or hearts
