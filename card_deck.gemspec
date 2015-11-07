@@ -7,7 +7,7 @@ Gem::Specification.new do |card_deck|
 	card_deck.author = "Zachary Perlmutter"
 	card_deck.summary = "The central part of a card game"
 	if !ENV['TRAVIS'] then card_deck.version = version
-	elsif ENV['TRAVIS_TAG'] == "" then card_deck.version = version + ?. + ENV['TRAVIS_BUILD_NUMBER']
+	elsif ENV['TRAVIS_TAG'] == "" then card_deck.version = version + ".pre." + ENV['TRAVIS_BUILD_NUMBER']
 	else card_deck.version = ENV['TRAVIS_TAG'] end
 	card_deck.license = "MIT"
 	card_deck.add_development_dependency "rspec"
