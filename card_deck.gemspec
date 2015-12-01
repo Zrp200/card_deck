@@ -14,5 +14,5 @@ Gem::Specification.new do |card_deck|
 	card_deck.add_development_dependency "rspec"
   	card_deck.add_development_dependency "rspec-its"
 	card_deck.extra_rdoc_files = %w(README.md LICENSE.md)
-	card_deck.files = Dir.glob "lib/*"
+	card_deck.files = Dir.glob "lib/**/*.rb"
 end
