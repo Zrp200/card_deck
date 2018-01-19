@@ -1,7 +1,7 @@
 language: ruby
 sudo: false
 install: bundle install
-rvm: 2.0.0
+rvm: 2.2
 script:
 - bundle exec rspec spec -f doc
 deploy:
