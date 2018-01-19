@@ -1,5 +1,5 @@
 File.open('VERSION.txt', 'w') {|file| file.write STDIN.gets} unless ENV['TRAVIS']
-version = `cat VERSION.txt`
+version = `cat VERSION.txt`.chomp
 Gem::Specification.new do |card_deck|
 	card_deck.homepage = "https://github.com/zrp200/card_deck"
 	card_deck.name = "card_deck"
