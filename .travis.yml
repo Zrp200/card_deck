@@ -1,5 +1,7 @@
 language: ruby
 sudo: false
+env:
+ global: CC_TEST_REPORTER_ID=e971f79facf5f77ddb690e900a18518670b6b05b8a28ab0e09825161275ea064
 install: bundle install
 rvm: 2.5
 before_script:
@@ -8,9 +10,7 @@ before_script:
  - ./cc-test-reporter before-build
 script:
 - bundle exec rspec spec -f doc
-after_script:
- - gem install simplecov
- - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT --debug
+after_script: ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
 - provider: rubygems
   api_key:
