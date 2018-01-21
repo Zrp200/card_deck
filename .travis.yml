@@ -10,7 +10,7 @@ script:
 - bundle exec rspec spec -f doc
 after_script:
  - gem install simplecov
- - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+ - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT --debug
 deploy:
 - provider: rubygems
   api_key:
@@ -19,5 +19,6 @@ deploy:
   on:
     repo: Zrp200/card_deck
     all_branches: true
+    tags: true
 matrix:
   fast_finish: true
